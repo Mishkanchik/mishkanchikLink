@@ -15,7 +15,7 @@ body, html, #app{
   
   .spark {
     position: absolute;
-    width:8px;
+    width:4px;
     height: 2px;
     background: rgb(255, 255, 255);
     pointer-events: none;
@@ -86,11 +86,8 @@ li{
   
   
   .social-networks{
-      
-      
-      width: 550px;
-      
-    
+    gap: 10px;
+    flex-wrap: wrap;
       display: flex;
       justify-content: space-evenly;
   }
@@ -121,15 +118,18 @@ li{
     text-align: center;
     position: relative;
     border-radius: 20px;
+    width: 100vw;
     max-width: 600px;
     max-height: 300px;
     padding-bottom: 50px;
     padding-top: 15px;
     margin: 180px auto 0;
     position: relative;
-    background: #2c2426;
     background: linear-gradient(500deg,#ff00f2 ,#3348ff );
+
   }
+
+
 
   .box:before,
   .box:after {
