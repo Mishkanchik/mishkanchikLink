@@ -1,0 +1,232 @@
+*{
+    box-sizing: border-box;
+}
+
+body, html, #app{
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Source Code Pro", serif;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .spark {
+    position: absolute;
+    width:8px;
+    height: 2px;
+    background: rgb(255, 255, 255);
+    pointer-events: none;
+    animation: spark-animation 0.6s ease-out forwards;
+  }
+  
+  @keyframes spark-animation {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(var(--dx), var(--dy)) scale(0.3);
+      opacity: 0;
+    }
+  }
+
+
+  #app {
+    overflow: hidden;
+  }
+  
+  #app canvas {
+    display: block;
+    position: fixed;
+    z-index: -2;
+    top: 0;
+  }
+
+  
+
+  a{
+    text-decoration: none;
+    background-color: transparent;
+    
+}
+
+li{
+    padding: 10px 70px;
+    list-style: none;
+    font-size: 16px;
+    background: linear-gradient(135deg, #acc9ff,#88c3da,#bedcf8 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+
+  
+  
+ 
+  
+  .logo{
+      font-size: 30px;
+      margin-top: 20px;
+      width: auto;
+      height: 40px;
+      background: linear-gradient(135deg, #acc9ff,#88c3da,#bedcf8 );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+ 
+      font-weight: 400;
+      font-style: normal;
+  }
+  
+  
+  .social-networks{
+      
+      
+      width: 550px;
+      
+    
+      display: flex;
+      justify-content: space-evenly;
+  }
+
+  .img-container {
+      width: 70px;
+      
+      border-radius: 50%;
+      box-shadow: #4400ff 0px 2px 40px 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+    
+  .img-container img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      transition: transform 0.8s ease-in-out;
+      z-index: 10;
+  }
+    
+  .img-container:hover img {
+      transform: rotate(360deg);
+  }
+
+  .box {
+    text-align: center;
+    position: relative;
+    border-radius: 20px;
+    max-width: 600px;
+    max-height: 300px;
+    padding-bottom: 50px;
+    padding-top: 15px;
+    margin: 180px auto 0;
+    position: relative;
+    background: #2c2426;
+    background: linear-gradient(500deg,#ff00f2 ,#3348ff );
+  }
+
+  .box:before,
+  .box:after {
+    border-radius: 20px;
+    content: "";
+    top: -5px;
+    left: -5px;
+    position: absolute;
+    background: linear-gradient(
+      45deg,
+      #ff0037,
+      #ff00f2,
+      #f84983,
+      #fffb00,
+      #9dff00,
+      #fba300,
+      #ff6600,
+      #ff3c00,
+      #3348ff,
+      #ae00ff
+    );
+    background-size: 400%;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    z-index: -1;
+    animation: glow 20s linear infinite;
+  }
+
+  .box:after {
+    filter: blur(30px);
+  }
+
+  @keyframes glow {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+
+  .loader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+   
+  }
+  
+  .loader::before,
+  .loader::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    filter: drop-shadow(0 0 11px rgba(13, 248, 119, 0.829));
+  }
+  
+  .loader::before {
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 0 17px #fff;
+    animation-name: pulsA;
+  }
+  
+  .loader::after {
+    width: calc(100% - 34px);
+    height: calc(100% - 34px);
+    box-shadow: 0 0 0 0 rgb(82, 14, 241);
+    animation-name: pulsB;
+  }
+  
+  @keyframes pulsA {
+    0% {
+      box-shadow: inset 0 0 0 17px rgba(18, 236, 207, 0.945);
+      opacity: 1;
+    }
+    50%, 100% {
+      box-shadow: inset 0 0 0 0 rgb(12, 228, 23);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes pulsB {
+    0%, 50% {
+      box-shadow: 0 0 0 0 rgb(14, 124, 228);
+      opacity: 0;
+    }
+    100% {
+      box-shadow: 0 0 0 17px rgb(77, 17, 243);
+      opacity: 1;
+    }
+  }
