@@ -227,6 +227,7 @@ li {
 
 	.box {
 		max-width: 90%;
+		margin: 0 auto;
 		max-height: 250px;
 		padding-bottom: 40px;
 	}
@@ -250,6 +251,7 @@ li {
 
 	.box {
 		max-width: 95%;
+		margin: 0 auto;
 		max-height: 220px;
 		padding-bottom: 30px;
 	}
